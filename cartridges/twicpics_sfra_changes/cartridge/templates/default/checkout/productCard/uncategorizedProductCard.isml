@@ -1,0 +1,41 @@
+<!---cart page render this file when product category is unassigned --->
+<div class="product-line-item" data-product-line-item="${lineItem.UUID}">
+    <div class="line-item-header">
+        <isif condition=${miniCart}>
+            <isinclude template="checkout/productCard/productCardProductNameAndRemove" />
+        <iselse>
+            <isinclude template="checkout/productCard/productCardProductName" />
+        </isif>
+    </div>
+
+    <isif condition="${lineItem.productType === 'bundle'}">
+        <div class="bundle-includes">${Resource.msg('msg.bundle.includes','cart',null)}</div>
+        <!--- individual bundled line items --->
+        <isinclude template="cart/productCard/cartProductCardBundledItems" />
+    <iselse/>
+        <div class="product-line-item-details d-flex flex-row">
+            <div class="item-image">
+                <isinclude url="${URLUtils.url(
+                    'Twicpics-Image',
+                    'class', 'product-image',
+                    'src', lineItem.images.small[0].url,
+                    'alt', lineItem.images.small[0].alt,
+                    'title', lineItem.images.small[0].title,
+                    'imageType', 'CATALOG'
+                )}"/>
+            </div>
+            <div class="item-attributes error-unassigned-category d-flex flex-column">
+                ${Resource.msg('error.removed.online.catalog', 'cart', null)}
+            </div>
+        </div>
+    </isif>
+    <div><hr class="line-item-divider"></div>
+    <isif condition="${lineItem.productType === 'bundle' && ((pdict.order && !pdict.order.orderStatus) || miniCart)}">
+        <isinclude template="cart/productCard/cartProductCardAvailability" />
+    </isif>
+    <isif condition=${miniCart}>
+        <div class="line-item-promo item-${lineItem.UUID}">
+            <isinclude template="checkout/productCard/productCardProductPromotions" />
+        </div>
+    </isif>
+</div>

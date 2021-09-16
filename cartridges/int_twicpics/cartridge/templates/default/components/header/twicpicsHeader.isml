@@ -1,0 +1,3 @@
+<isif condition="${pdict.externalJS}">
+    <script async defer src="${pdict.externalJS}"></script>
+</isif>

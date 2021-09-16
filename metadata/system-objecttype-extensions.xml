@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="TWICCatalogPath">
+                <display-name xml:lang="x-default">Twicpics Catalog Path</display-name>
+                <description xml:lang="x-default">Path for the catalog mapping on Twicpics</description>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="TWICContentPath">
+                <display-name xml:lang="x-default">Twicpics Content Path</display-name>
+                <description xml:lang="x-default">Path for the content mapping on Twicpics</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="TWICEnabled">
+                <display-name xml:lang="x-default">Twicpics Enabled</display-name>
+                <description xml:lang="x-default">Enable or disable the Twicpics cartridge</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Standard</display>
+                        <value>standard</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Advanced</display>
+                        <value>advanced</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Expert</display>
+                        <value>expert</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="TWICHostname">
+                <display-name xml:lang="x-default">Twicpics Hostname</display-name>
+                <description xml:lang="x-default">The hostname to make the Twicpics URL with HTTP protocol</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="TWICScriptVersion">
+                <display-name xml:lang="x-default">Twicpics Script Version</display-name>
+                <description xml:lang="x-default">Refer to https://www.twicpics.com/documentation/script-setup/&#13;
+Example: v1</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="TWICSitePath">
+                <display-name xml:lang="x-default">Twicpics Site Path</display-name>
+                <description xml:lang="x-default">Path for the site mapping on Twicpics (example : image into site preferences)</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="TWICStaticPath">
+                <display-name xml:lang="x-default">Twicpics Static Path</display-name>
+                <description xml:lang="x-default">Path for the static mapping on Twicpics</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="TWICTransformations">
+                <display-name xml:lang="x-default">Twicpics Transformations</display-name>
+                <description xml:lang="x-default">JSON configuration to render the Twicpics images</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+			<attribute-definition attribute-id="TWICExternalJS">
+                <display-name xml:lang="x-default">Twicpics External JS Link</display-name>
+                <description xml:lang="x-default">https://{subdomain}.twic.pics/?v1</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Twicpics">
+                <display-name xml:lang="x-default">Twicpics</display-name>
+                <attribute attribute-id="TWICEnabled"/>
+                <attribute attribute-id="TWICHostname"/>
+                <attribute attribute-id="TWICScriptVersion"/>
+                <attribute attribute-id="TWICStaticPath"/>
+                <attribute attribute-id="TWICContentPath"/>
+                <attribute attribute-id="TWICCatalogPath"/>
+                <attribute attribute-id="TWICTransformations"/>
+                <attribute attribute-id="TWICSitePath"/>
+				<attribute attribute-id="TWICExternalJS"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

@@ -1,0 +1,25 @@
+<div class="image-container">
+    <a href="${pdict.urls.product}">
+        <isinclude url="${URLUtils.url(
+            'Twicpics-Image',
+            'class', 'tile-image',
+            'src', product.images.medium[0].url,
+            'alt', product.productName,
+            'title', product.images.medium[0].title,
+            'imageType', 'CATALOG'
+        )}"/>
+    </a>
+    <isif condition="${pdict.display.showQuickView !== false}">
+        <a class="quickview hidden-sm-down" href="${pdict.urls.quickView}"
+           data-toggle="modal"
+           data-target="#quickViewModal"
+           title="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+           aria-label="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+        >
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                <i class="fa fa-expand fa-stack-1x"></i>
+            </span>
+        </a>
+    </isif>
+</div>

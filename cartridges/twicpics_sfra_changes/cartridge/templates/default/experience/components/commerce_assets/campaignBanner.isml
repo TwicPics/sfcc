@@ -1,0 +1,19 @@
+<div class="campaign-banner d-none">
+    <div class="container">
+        <div class="campaign-banner-container d-flex justify-content-between">
+            <div></div>
+            <div class="campaign-banner-message pt-3">
+                <isprint value="${pdict.bannerMessage}" encoding="off"/>
+            </div>
+            <div class="close-button">
+                <button class="close pt-3" aria-label="${Resource.msg('button.close','campaignBanner',null)}">
+                    <isinclude url="${URLUtils.url(
+                        'Twicpics-Image',
+                        'src', URLUtils.staticURL('/images/close-icon.svg'),
+                        'imageType', 'STATIC'
+                    )}"/>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

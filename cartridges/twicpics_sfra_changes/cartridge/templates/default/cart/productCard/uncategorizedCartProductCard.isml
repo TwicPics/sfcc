@@ -1,0 +1,40 @@
+<!---minicart page render this file when product category is unassigned --->
+<isset name="hasEmbeddedBonusProducts" value="${lineItem.bonusProductLineItemUUID === 'bonus'}"  scope="page"/>
+<isset name="bonusproductlineitem" value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}" scope="page"/>
+<isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page"/>
+
+<div class="card product-info ${bonusproductlineitem} uuid-${lineItem.UUID}">
+    <!--- name and remove buttons --->
+    <isinclude template="cart/productCard/cartProductCardHeader" />
+
+    <div class="row ${bonuslineitemrow}">
+        <div class="col-lg-5">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-row">
+                    <div class="item-image">
+                        <isinclude url="${URLUtils.url(
+                            'Twicpics-Image',
+                            'class', 'product-image',
+                            'src', lineItem.images.small[0].url,
+                            'alt', lineItem.images.small[0].alt,
+                            'title', lineItem.images.small[0].title,
+                            'imageType', 'CATALOG'
+                        )}"/>
+                    </div>
+                    <div class="item-attributes error-unassigned-category d-flex flex-column">
+                        ${Resource.msg('error.removed.online.catalog', 'cart', null)}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <isif condition="${!lineItem.isBonusProductLineItem}"/>
+            <div class="hidden-md-down">
+                <isinclude template="components/deleteButton" />
+            </div>
+        </isif>
+    </div>
+
+    <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+        <isinclude template="cart/productCard/cartEmbeddedBonusProducts" />
+    </isif>
+</div>

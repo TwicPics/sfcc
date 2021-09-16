@@ -1,0 +1,8 @@
+<isinclude url="${URLUtils.url(
+    'Twicpics-Image',
+    'class', 'shopthelook-image image-fluid',
+    'src', pdict.image.url,
+    'alt', pdict.image.alt ? pdict.image.alt : '',
+    'title', product.productName,
+    'imageType', 'CATALOG'
+)}"/>
