@@ -1,0 +1,29 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/photoTile.css');
+</isscript>
+<div class="photo-tile-container">
+    <div class="row">
+        <div class="col-12">
+            <figure class="photo-tile-figure">
+                <picture>
+                    <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)"/>
+                    <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)"/>
+                    <isinclude url="${URLUtils.url(
+                        'Twicpics-Image',
+                        'class', 'photo-tile-image image-fluid',
+                        'src', pdict.image.src.mobile,
+                        'alt', pdict.image.alt ? pdict.image.alt : '',
+                        'title', pdict.image.alt ? pdict.image.alt : '',
+                        'style', '--focal-point-x:'+pdict.image.focalPointX+'; --focal-point-y:'+pdict.image.focalPointY,
+                        'placeholder', 'none',
+                        'imageType', 'CONTENT',
+                        'width', '534',
+                        'height', '233'
+                    )}"/>
+                </picture>
+            </figure>
+        </div>
+    </div>
+</div>
+

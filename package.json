@@ -1,0 +1,40 @@
+{
+    "name": "int_twicpics_sfra",
+    "version": "21.06.1",
+    "description": "New overlay cartridge",
+    "main": "index.js",
+    "scripts": {
+        "lint": "sgmf-scripts --lint js",
+        "upload": "sgmf-scripts --upload -- ",
+        "uploadCartridge": "sgmf-scripts --uploadCartridge int_twicpics && sgmf-scripts --uploadCartridge int_twicpics_sfra",
+        "compile:js": "sgmf-scripts --compile js",
+        "compile:scss": "sgmf-scripts --compile css",
+        "watch": "sgmf-scripts --watch",
+        "test": "sgmf-scripts --test test/unit/**/*.js"
+    },
+    "dependencies": {
+        "cleave.js": "~1.4.2"
+    },
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "css-loader": "^0.28.11",
+        "eslint": "^3.19.0",
+        "eslint-config-airbnb-base": "^5.0.3",
+        "eslint-plugin-import": "^1.16.0",
+        "istanbul": "^0.4.5",
+        "mocha": "^5.2.0",
+        "node-sass": "^4.12.0",
+        "postcss-loader": "^2.1.6",
+        "properties-parser": "^0.3.1",
+        "proxyquire": "1.7.4",
+        "sass-loader": "^7.3.1",
+        "sgmf-scripts": "^2.4.1",
+        "sinon": "^1.17.7",
+        "stylelint": "^8.4.0",
+        "stylelint-config-standard": "^17.0.0",
+        "stylelint-scss": "^2.5.0"
+    },
+    "paths": {
+        "base": "../storefront-reference-architecture/cartridges/app_storefront_base"
+    }
+}

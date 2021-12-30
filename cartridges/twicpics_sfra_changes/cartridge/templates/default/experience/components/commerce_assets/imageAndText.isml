@@ -1,0 +1,47 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/imageAndTextCommon.css');
+</isscript>
+
+<div class="ITC-container">
+    <div class="row ITC-row">
+        <div class="col-12">
+            <figure class="ITC-figure image-component">
+                <picture>
+                    <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)"/>
+                    <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)"/>
+                    <isset name="imageName" value="${Resource.msg('pd.ITC.image.alt','pageDesigner',null)}" scope="page"/>
+                    <a href="${pdict.link}" aria-label="${Resource.msgf('pd.ITC.image.link','pageDesigner', null, pdict.alt ? pdict.alt : imageName)}">
+                        <isinclude url="${URLUtils.url(
+                            'Twicpics-Image',
+                            'class', pdict.heading ? 'ITC-image image-fluid common-image-component common-image-filter' : 'ITC-image image-fluid common-image-component',
+                            'src', pdict.image.src.mobile,
+                            'alt', pdict.alt ? pdict.alt : imageName,
+                            'title', pdict.alt ? pdict.alt : imageName,
+                            'style', '--focal-point-x:'+pdict.image.focalPointX+'; --focal-point-y:'+pdict.image.focalPointY,
+                            'placeholder', 'none',
+                            'imageType', 'CONTENT'
+                        )}"/>
+                    </a>
+                </picture>
+                <figcaption>
+                    <div class="image-heading-container common-image-height">
+                        <div class="row ITC-image-heading-text">
+                            <div class="col-12 text-sm-left text-center">
+                                <span>
+                                    <isprint value="${pdict.heading ? pdict.heading : ''}" encoding="off"/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 ITC-text-underneath">
+                        <span>
+                            <isprint value="${pdict.ITCText ? pdict.ITCText : ''}" encoding="off"/>
+                        </span>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+

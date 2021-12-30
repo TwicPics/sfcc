@@ -1,0 +1,35 @@
+<isif condition="${pdict.twicpicsImg}">
+    <isset name="twicpicsImg" value="${pdict.twicpicsImg}" scope="page" />
+</isif>
+
+<isif condition="${pdict.version ==='expert'}">
+    <div class="twic-img ${twicpicsImg.transition ? 'twic-img--fade' : ''}" style="${twicpicsImg.bgStyle}">
+        <img
+            <isif condition="${twicpicsImg.imgStyle}"> style="${twicpicsImg.imgStyle}" </isif>
+            alt="${!twicpicsImg.alt ? twicpicsImg.src.split(/[?#]/).shift().split('/').pop().split('.').shift() : twicpicsImg.alt}"
+            src="${twicpicsImg.urlImg}?twic=v1/cover=${twicpicsImg.apiRatio}"
+            <isif condition="${twicpicsImg.width}"> width="${twicpicsImg.width}" </isif>
+            <isif condition="${twicpicsImg.height}"> height="${twicpicsImg.height}" </isif>
+            <isif condition="${twicpicsImg.class}"> class="${twicpicsImg.class}"</isif>
+            <isif condition="${twicpicsImg.title}"> title="${twicpicsImg.title}" </isif>
+            <isif condition="${twicpicsImg.dataIndex}"> data-index="${twicpicsImg.dataIndex}" </isif>
+            <isif condition="${twicpicsImg.itemprop}"> itemprop="${twicpicsImg.itemprop}" </isif>
+            <isif condition="${twicpicsImg.twicSrc}">data-twic-src="${twicpicsImg.twicSrc}" </isif>
+            <isif condition="${twicpicsImg.twicFocus}">data-twic-focus="${twicpicsImg.twicFocus}" </isif>
+            <isif condition="${twicpicsImg.twicStep}">data-twic-step="${twicpicsImg.twicStep}" </isif>
+        >
+    </div>
+<iselse/>
+    <img
+        src="${twicpicsImg.src}"
+        <isif condition="${twicpicsImg.style}"> style="${twicpicsImg.style}" </isif>
+        <isif condition="${twicpicsImg.alt}"> alt="${twicpicsImg.alt}" </isif>
+        <isif condition="${twicpicsImg.height}"> height="${twicpicsImg.height}" </isif>
+        <isif condition="${twicpicsImg.width}"> width="${twicpicsImg.width}" </isif>
+        <isif condition="${twicpicsImg.class}"> class="${twicpicsImg.class}"</isif>
+        <isif condition="${twicpicsImg.title}"> title="${twicpicsImg.title}" </isif>
+        <isif condition="${twicpicsImg.dataIndex}"> data-index="${twicpicsImg.dataIndex}" </isif>
+        <isif condition="${twicpicsImg.itemprop}"> itemprop="${twicpicsImg.itemprop}" </isif>
+    >
+</isif>
+

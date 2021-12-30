@@ -1,0 +1,9 @@
+**/node_modules/
+**/static/default/css/
+**/static/default/js/
+*.code-workspace
+dw.json
+.DS_Store
+.vscode/
+package-lock.json
+*.tern-project

@@ -1,0 +1,45 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/imageAndTextCommon.css');
+</isscript>
+
+<div class="mainbanner-container">
+    <a href="${pdict.categoryLink}">
+        <div class="row">
+            <div class="col-12">
+                <figure class="mainbanner-figure image-component">
+                    <picture>
+                        <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)"/>
+                        <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)"/>
+                        <isinclude url="${URLUtils.url(
+                            'Twicpics-Image',
+                            'class', 'mainbanner-image image-fluid common-image-component common-image-filter',
+                            'src', pdict.image.src.mobile,
+                            'alt', pdict.image.alt ? pdict.image.alt : '',
+                            'title', pdict.image.alt ? pdict.image.alt : '',
+                            'style', '--focal-point-x:'+pdict.image.focalPointX+'; --focal-point-y:'+pdict.image.focalPointY,
+                            'placeholder', 'none',
+                            'imageType', 'CONTENT',
+                            'width', '1106',
+                            'height', '556'
+                        )}"/>
+                    </picture>
+                    <figcaption class="image-heading-container">
+                        <div class="row image-heading-text">
+                            <div class="col-12 text-sm-left text-center">
+                                <span>
+                                    <isprint value="${pdict.heading}" encoding="off"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row mainbanner-sub-text">
+                            <div class="col-12 text-sm-left text-center">
+                                <p class="link-large">${Resource.msg('pd.main.banner.shop.now','pageDesigner',null)}</p>
+                            </div>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </a>
+</div>

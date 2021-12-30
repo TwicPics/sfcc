@@ -1,0 +1,34 @@
+<div class="color-swatches">
+    <div class="swatches">
+        <isif condition="${product.variationAttributes && product.variationAttributes.length > 0}">
+            <isloop items="${product.variationAttributes[0].values}" var="swatch" status="loopState">
+                <isif condition="${loopState.count < 4
+                                && swatch.images != null
+                                && swatch.images.swatch[0] != null
+                                && swatch.images.swatch[0].url != null}">
+                    <a href="${swatch.url}">
+                        <span>
+                            <isinclude url="${URLUtils.url(
+                                'Twicpics-Image',
+                                'class', 'swatch swatch-circle',
+                                'placeholder', 'none',
+                                'dataIndex', loopState.count-1,
+                                'style', 'background-image: url('+swatch.images.swatch[0].url+')',
+                                'src', swatch.images.swatch[0].url,
+                                'alt', swatch.images.swatch[0].alt,
+                                'width', '43',
+                                'height', '13',
+                                'imageType', 'CATALOG'
+                            )}"/>
+                        </span>
+                    </a>
+                <iselse/>
+                    <span>
+                        <a href="${pdict.urls.product}">...</a>
+                    </span>
+                    <isbreak>
+                </isif>
+            </isloop>
+        </isif>
+    </div>
+</div>

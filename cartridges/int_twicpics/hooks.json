@@ -1,0 +1,8 @@
+{
+    "hooks": [
+        {
+            "name": "app.template.htmlHead",
+            "script": "./cartridge/scripts/hooks/htmlhead.js"
+        }
+    ]
+}
