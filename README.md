@@ -13,7 +13,7 @@ Through TwicPics, developers always point to the biggest, most detailed version 
 
 ## Create your Twicpics Account
 
-If you don't have a Twicpics account, sign up for free account on [Twicpics site](https://cloudinary.com/users/register/free).
+If you don't have a Twicpics account, sign up for free account on [Twicpics site](https://www.twicpics.com).
 
 ## Configuring the cartridges
 
